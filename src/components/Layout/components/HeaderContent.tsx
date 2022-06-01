@@ -1,4 +1,3 @@
-import {useLocation} from "react-router-dom";
 import {Heading} from "@chakra-ui/react";
 
 interface HeaderContent {
@@ -6,7 +5,6 @@ interface HeaderContent {
 }
 
 function HeaderContent(props: HeaderContent) {
-    const location = useLocation();
 
     return (
         <Heading size="sm" data-testid="layout-headerTitle">

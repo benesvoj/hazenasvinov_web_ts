@@ -1,6 +1,8 @@
 import React from 'react';
 import {VStack, Box, Stack, Menu} from "@chakra-ui/react";
 import {Outlet} from 'react-router-dom';
+import {Header} from "./components";
+import Card from "../Card/Card";
 
 function Layout() {
     return (
@@ -20,7 +22,7 @@ function Layout() {
                     {/*<Hamburger menuItems={menuItems} pinnedMenuItems={pinnedMenuItems} />*/}
                     {/*<Space horizontal={4} />*/}
                     <Box flex={1}>
-                        {/*<Header module={moduleRoot} />*/}
+                        <Header />
                     </Box>
                 </Stack>
             </Box>
@@ -49,6 +51,9 @@ function Layout() {
                 data-testid="layout-content"
             >
                 <Outlet />
+            </Box>
+            <Box>
+                <Card />
             </Box>
         </VStack>
     );

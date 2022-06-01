@@ -1,6 +1,6 @@
-import {HStack, Box, MenuItemProps} from "@chakra-ui/react";
+import {HStack, Box, MenuItemProps, Menu, MenuButton, Portal, MenuList, MenuItem} from "@chakra-ui/react";
 import HeaderContent from "./HeaderContent";
-import MyProfileAndSettings from "./MyProfileAndSettings";
+import Logo from './Logo';
 
 interface HeaderProps {
     module?: MenuItemProps;
@@ -12,8 +12,18 @@ function Header(props: HeaderProps) {
         <HStack align="center">
             <Box flex={1}>
                 {/*<HeaderContent title={props.module ? (props.module.layoutProps.title) : undefined} />*/}
+                <Menu>
+                    <MenuButton>Oddil</MenuButton>
+                    <MenuButton>Kontakt</MenuButton>
+                    <MenuButton>Kronika</MenuButton>
+                    <Logo />
+                    <Portal>
+                        <MenuList>
+                            <MenuItem>oddil</MenuItem>
+                        </MenuList>
+                    </Portal>
+                </Menu>
             </Box>
-            <MyProfileAndSettings />
         </HStack>
     );
 }
